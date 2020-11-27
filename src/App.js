@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component, Suspense } from "react";
+import { Route, Switch } from "react-router-dom";
+import routes from "./routes";
+import Loader from "./components/Loader/Loader";
+import Navigation from "./components/Navigation/Navigation";
+class App extends Component {
+  render() {
+    return (
+      <>
+        <Suspense fallback={<Loader />}>
+          <Navigation />
+          <Switch>
+            {routes.map((route) => (
+              <Route key={route.path} {...route} />
+            ))}
+          </Switch>
+        </Suspense>
+      </>
+    );
+  }
 }
 
 export default App;

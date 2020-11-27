@@ -1,0 +1,24 @@
+.header {
+  width: 100%;
+  box-shadow: 2px 0px 3px 3px #ccc;
+  padding: 20px;
+}
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 15%;
+}
+.navLink {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+}
+.navLinkActive {
+  text-decoration: none;
+  color: #ff69b4;
+  font-size: 20px;
+}
+.navLink:hover {
+  text-decoration: underline;
+}
