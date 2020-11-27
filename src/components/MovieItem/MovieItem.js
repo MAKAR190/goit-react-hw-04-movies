@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./MovieItem.module.css";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 export default function MovieItem({ goBack, match, movie }) {
   return (
     <div>
@@ -39,3 +40,8 @@ export default function MovieItem({ goBack, match, movie }) {
     </div>
   );
 }
+MovieItem.propTypes = {
+  goBack: PropTypes.func.isRequired,
+  match: PropTypes.object.isRequired,
+  movie: PropTypes.object.isRequired,
+};

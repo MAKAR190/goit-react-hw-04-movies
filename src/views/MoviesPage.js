@@ -4,10 +4,16 @@ import fetch from "../utils/fetchAPI";
 import { Link } from "react-router-dom";
 import queryString from "query-string";
 import Loader from "../components/Loader/Loader";
+import ReactRouterPropTypes from "react-router-prop-types";
 export default class MoviesPage extends Component {
   state = {
     articles: [],
     isLoading: false,
+  };
+  static propTypes = {
+    history: ReactRouterPropTypes.history.isRequired,
+    location: ReactRouterPropTypes.location.isRequired,
+    match: ReactRouterPropTypes.match.isRequired,
   };
   componentDidMount() {
     const getCategoryFromProps = (string) => queryString.parse(string);
